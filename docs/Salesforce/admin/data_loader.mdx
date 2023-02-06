@@ -1,0 +1,91 @@
+---
+id: Data-Loader
+title: Data Loader
+sidebar_position: 99
+---
+ 
+:::info
+ 
+Esta guía es solamente para sistemas operativos **Windows**. Pero en la [Documentación oficial](https://developer.salesforce.com/docs/atlas.en-us.dataLoader.meta/dataLoader/data_loader.htm), tienen los pasos para **MAC**. De todas formas no se preocupen que no hay mucha diferencia. 
+ 
+:::
+ 
+:::caution Atención
+ 
+**Linux** no cuenta con soporte. Así que van a tener que ir por otro lado.
+ 
+:::
+ 
+## Introducción
+ 
+**Data Loader** es una aplicación pensada para la importación y exportación de datos. Tiene disponible las principales acciones para realizar inserts, update, delete y upsert en nuestras tablas.
+ 
+Es una herramienta muy útil con una pequeña interfaz gráfica que nos da la posibilidad de realizar mapeos de campos con un intuitivo drag & drop.
+ 
+Les comparto la documentación oficial por si les interesa expandirse más, [Documentación oficial (Inglés)](https://developer.salesforce.com/docs/atlas.en-us.dataLoader.meta/dataLoader/data_loader.htm).
+ 
+## ¿En qué situaciones debo usarlo?
+ 
+### Data Loader
+* Cuando debemos realizar cargas de hasta 5 millones de registros en nuestra instancia. Si necesitamos cargar más del límite, Salesforce nos recomienda trabajar con un Partner o visitar el AppExchange y buscar una solución por esos medios.
+* Cuando debemos cargar datos en un objeto que no es soportado por el importador estándar (Como productos, por ejemplo).
+* Cuando nuestra información incluye campos complejos que debamos cargar de manera constante y regular.
+* Cuando necesitamos agendar cargas regulares, como importaciones nocturnas.
+* Cuando necesitamos exportar datos para propósitos de backup.
+ 
+### Importador Estándar
+* Cuando estamos cargando menos de 50 mil registros.
+* Cuando el objeto al que debemos importar datos es soportado por el importador.
+* Cuando queremos prevenir la carga de registros duplicados.
+* Cuando el objeto elegido tiene menos de 50 campos.
+* Cuando tus datos no incluyen complejos mapeos de campos.
+ 
+## Instalación
+La instalación es bastante sencilla si nada male sal en el camino. Repasemos un poco los pasos.
+ 
+**1** - Descargar e instalar **"Zulu OpenJDK"** desde su web [Azul.com](https://www.azul.com/downloads/) (Es gratuito y solamente tienen que apretar siguiente en la instalación).
+ 
+**2** - Luego, descargar el [Data Loader](https://developer.salesforce.com/tools/data-loader), descomprimirlo e instalar el archivo **install.bat** que hay dentro. Este les ofrece dejarles un acceso directo, pero en todo caso, el Data Loader se encuentra en ```C:\Users\YOUR_USER\dataloader```.
+ 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vZOsb9gvFu4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Consideraciones
+ 
+Es necesario contar con los siguientes permisos de usuario:
+* API Enabled
+* Los permisos apropiados para la operación que necesitamos realizar, por ejemplo, insertar nuevas cuentas.
+* Bulk API Hard Delete (Solo es necesario si necesitamos eliminar registros.)    
+ 
+Por otro lado, necesita tener una instalación igual o superior de **Java 11**, pero entiendo que con **Zulu** se soluciona (De mi parte yo ya tenía instalado Java 19).
+ 
+## Importar Productos y Listas de precios
+ 
+Dejo disponible una pequeña guía de Salesforce que nos da una mano con el paso a paso de como importar Productos y su lista de precio, tanto la estándar como la personalizada.
+ 
+[Nuevos productos y Listas de precios](https://help.salesforce.com/s/articleView?id=000383989&type=1)
+ 
+:::tip Ayudita
+ 
+Cuando hacemos el primer import con nuestros productos, data loader nos retorna un csv con los IDs de los productos cargados. Sobre ese mismo CSV tendríamos que trabajar agregando una columna con el ID del PricebookEntry.
+ 
+:::
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VFuyGCwvqxA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+ 
+## Posibles problemas
+ 
+### Error al logearse
+ 
+Al tratar de logearme con 0Auth me redirige a una página con un código al estilo token. No sé por qué en algunas ocasiones me aparecía y otras no. Al parecer ese código hay que agregarlo al final de la contraseña, pero no tuve chance de probarlo.
+ 
+Lo que realmente me sirvió, fue ir a **Settings** y ahí setear la instancia a la que quería logarme. Esto al querer logearme me abrió una nueva ventana con la instancia y solamente tuve que ingresar.
+ 
+[¿Por qué no puedo logearme en Data Loader](https://help.salesforce.com/s/articleView?id=sf.faq_import_dataloader_login.htm&type=5)
+ 
+ 
+
+=====================
+
+Importar productos a ordenes
+https://help.salesforce.com/s/articleView?id=000384893&type=1
