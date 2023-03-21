@@ -4,6 +4,15 @@
 # Production
 /build
 
+# Working
+.developer
+.automatic
+.rep&dash
+.sales
+.service
+.importar.mdx
+.common_errors.mdx
+
 # Generated files
 .docusaurus
 .cache-loader
