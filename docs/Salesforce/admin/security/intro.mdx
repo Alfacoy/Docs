@@ -4,8 +4,7 @@ title: Seguridad básica
 sidebar_position: 1
 ---
 
-## Configuraciones de seguridad básicas
-:::note
+:::info Ubicación
 
 Desde **Configuración > Seguridad** vamos a tener disponible varias herramientas para mejorar la seguridad de nuestra
 organización.
@@ -18,14 +17,15 @@ Dependiendo nuestro nivel de seguridad, se nos va a dar una calificación y deba
 y a mejorar que tenemos. 
 
 ### Setup Audit Trail
+:::info Enlace de utilidad
+En el **[Help de Salesforce](https://help.salesforce.com/s/articleView?id=sf.admin_monitorsetup.htm&type=5)**, podemos encontrar todos los trackeos disponibles para el Audit Trail.
+:::
+
 Nos sirve para ver los últimos 20 cambios que hubo en la organización en cuanto a configuración de la plataforma. 
 Por ejemplo, si creamos un nuevo campo para el objeto de cuentas o una nueva regla de validación, Audit Trail se encarga
 de trackear quien, cuando y que cambios se hicieron.
 
-:::info Lista completa de trackeo
-En el Help de salesforce, podemos encontrar todos los trackeos disponibles para el Audit Trail.
-https://help.salesforce.com/s/articleView?id=sf.admin_monitorsetup.htm&type=5
-:::
+
 ### Políticas de contraseña para toda la organización
 En la barra de búsqueda ingresamos "Password Policies", desde ahí podremos definir:
 * Los días en que se expira la contraseña.
@@ -75,6 +75,14 @@ nuestra identidad aparte de ingresar el usuario y contraseña.
 De igual manera se puede también limitar los accesos desde los perfiles. Solamente podrán iniciar sesión desde el o los rangos de IP
 permitidos. 
 
+
+## Información complementaria
+
+* Al momento de crear nuevos usuarios, a estos les llegará un mail con un enlace al que deben ingresar ANTES de los 7 días ya que luego expira.
+* Los nombres de usuarios deben ser únicos en todas las organizaciones de Salesforce y estos deben ser en formato de email (Por ejemplo: admin@bdurand.com).
+* Cuando modifiquemos el email del usuario, la notificación de aceptación del nuevo email va a llegar a email que hayamos 
+agregado, no al anterior.
+
 ---
 
 ## Terminos de seguridad informática
@@ -83,3 +91,4 @@ permitidos.
 Es un principio de seguridad informática que nos dice ofrecer el menor privilegio al usuario. **Solo tendría que tener acceso 
 a lo que necesita ver y hacer**. Si es un usuario que solo va a necesitar ver cuentas y editarlas, no debería tener permiso de
 borrar un registro o instalar un paquete externo en la instancia.
+

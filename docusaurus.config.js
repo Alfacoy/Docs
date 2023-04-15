@@ -1,27 +1,17 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Brian Durand',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  tagline: 'Documentación de Brian Durand.',
+  url: 'https://www.docs.durandbrian.com/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  organizationName: 'Alfacoy', 
+  projectName: 'Docs', 
   i18n: {
     defaultLocale: 'es',
     locales: ['es'],
@@ -34,10 +24,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          routeBasePath: '/',
         },
         blog: false,
         theme: {
@@ -52,22 +39,12 @@ const config = {
     ({
       navbar: {
         title: 'Brian Durand',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            href: 'https://www.durandbrian.com/',
+            label: 'Website',
             position: 'right',
-            label: 'Documentación',
-          },
-          {
-            href: 'https://github.com/Alfacoy',
-            label: 'GitHub',
-            position: 'right',
-          },
+          }
         ],
       },
       docs: {
@@ -79,29 +56,37 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Contenido',
             items: [
               {
                 label: 'Documentación',
-                to: '/docs/intro',
+                href: '/'
               },
-            ],
+              {
+                label: 'Changelog',
+                href: '/changelog'
+              }
+            ]
           },
           {
             title: 'Redes',
             items: [
               {
-                label: 'Website',
-                href: 'https://www.durandbrian.com/',
+                label: 'Trailblazer',
+                href: 'https://trailblazer.me/id/briandurand',
               },
               {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',
+              },
+              {
+                label: 'Linkedin',
+                href: 'https://www.linkedin.com/in/durand18/',
               }
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()}. Hecho con 💖 por <a href="https://www.linkedin.com/in/durand18/" target="_blank" rel="noopener noreferrer"><b>Brian Durand</b></a> y <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer"><b>Docusaurus</b></a>.`,
+        copyright: `Copyright © ${new Date().getFullYear()}. Hecho con 💖 y <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer"><b>Docusaurus</b></a> por <a href="https://www.durandbrian.com/" target="_blank" rel="noopener noreferrer"><b>Brian Durand</b></a>.`,
       },
       prism: {
         theme: lightCodeTheme,
