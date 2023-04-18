@@ -12,7 +12,7 @@ organización.
 ::: 
 
 ### Health Check
-Es una pestaña en donde se nos informa que tan bien está nuestra organización en terminos de seguridad.
+Es una pestaña en donde se nos informa que tan bien está nuestra organización en términos de seguridad.
 Dependiendo nuestro nivel de seguridad, se nos va a dar una calificación y debajo de ella los puntos fuertes
 y a mejorar que tenemos. 
 
@@ -23,7 +23,7 @@ En el **[Help de Salesforce](https://help.salesforce.com/s/articleView?id=sf.adm
 
 Nos sirve para ver los últimos 20 cambios que hubo en la organización en cuanto a configuración de la plataforma. 
 Por ejemplo, si creamos un nuevo campo para el objeto de cuentas o una nueva regla de validación, Audit Trail se encarga
-de trackear quien, cuando y que cambios se hicieron.
+de trackear quien, cuando y qué cambios se hicieron.
 
 
 ### Políticas de contraseña para toda la organización
@@ -31,7 +31,7 @@ En la barra de búsqueda ingresamos "Password Policies", desde ahí podremos def
 * Los días en que se expira la contraseña.
 * Forzar que no se coloque una contraseña anterior.
 * El tamaño mínimo que tendría que tener la nueva contraseña.
-* Los valores que la componen (números, letras, simbolos y cantidades de estos).
+* Los valores que la componen (números, letras, símbolos y cantidades de estos).
 * Veces que se puede equivocar al ingresar la contraseña.
 * Tiempo de bloqueo en caso de superar las veces permitidas.
 * Obscurecer la respuesta secreta cuando se resetea la contraseña.
@@ -60,7 +60,7 @@ usuarios tengan el permiso de iniciar sesión.
 
 ### IP de confianza para la organización
 Para acceder, debemos escribir en la búsqueda rápida "Network Access" y crear una nueva IP de confianza.
-Una ves que aplicamos un rango de IP y su descripción, nos va a permitir, siempre que iniciemos sesión dentro de ese rango,
+Una vez que aplicamos un rango de IP y su descripción, nos va a permitir, siempre que iniciemos sesión dentro de ese rango,
 evitar la verificación de identidad y las integraciones no necesitarán el token de seguridad.
 
 Los usuarios fuera de esta IP de confianza podrán seguir conectandose, pero deberán ingresar todas las medidas
@@ -92,3 +92,10 @@ Es un principio de seguridad informática que nos dice ofrecer el menor privileg
 a lo que necesita ver y hacer**. Si es un usuario que solo va a necesitar ver cuentas y editarlas, no debería tener permiso de
 borrar un registro o instalar un paquete externo en la instancia.
 
+### PAM
+"Privileged access management" es un conjunto de estrategias de ciberseguridad y tecnología que las organizaciones usan para controlar el
+nivel de acceso y permisos de los usuarios, procesos y sistemas. Un usuario privilegiado es por ejemplo un administrador del sistema, de base de datos, etc.
+
+### Least privilege 
+Es un principio que nos incita a brindar el menor permiso necesario para que nuestros usuarios puedan realizar sus actividades, ni más ni menos.
+Esto ayuda a que un usuario no haga más de lo que le corresponde, ya que esto podría ser una brecha en la seguridad.
