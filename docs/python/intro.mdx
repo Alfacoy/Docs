@@ -3,8 +3,96 @@ id: intro
 title: Introducción
 ---
 
-:::caution Pendiente
-Pendiente de documentación.
+### ¿Qué es Python?
+Es un lenguaje de programación de código abierto, orientado a objetos, simple y fácil de entender. Tiene una sintaxis sencilla que cuenta con una vasta biblioteca de herramientas. 
+Es un lenguaje interpretado con **tipado dinámico**, **multiparadigma** y **multiplataforma**.
 
-El martes 18 de abril comienzo un curso de Python.
+### Principales usos
+* Inteligencia artificial
+* Big Data
+* Data Science
+* Frameworks de pruebas
+* Desarrollo Web
+* Bots :heart_eyes:
+* Etc
+
+### Tipos de número
+Python distingue entre **enteros (int - long)**, **números de punto flotante (float)** y **números complejos (complex)**. A diferencia de otros lenguajes de programación, los números
+**tipo int** en Python 3 pueden ser pequeños o grandes, no tienen límite alguno.
+
+:::note Nota
+Los números complejos son los que tienen parte imaginaria y es muy probable que no lo vayas a necesitar nunca. Se almacenan usando reales, ya que es una extensión de dichos números.
+:::
+
+### Precedencia
+El orden normal de las operaciones es de izquierda a derecha, evaluando en orden los siguientes operadores:
+
+* Términos entre paréntesis
+* Potenciación y raíces
+* Multiplicación y división
+* Suma y resta
+
+### Cadena de texto
+Las cadenas o **strings (str)** son un tipo de dato compuesto por secuencias de caracteres que representan texto. Estas cadenas se delimitan
+mediante el uso de comillas simples o dobles.
+
+:::note Ejemplo
+"Esto es una cadena de texto"
+
+'Esto es una cadena de texto también'
+:::
+
+
+### Variables
+Las variables se pueden entender como "cajas" en las que se guardan datos, pero en Python las variables son "**etiquetas**" que permiten 
+hacer referencias a los datos (que se guardan en "cajas" llamadas objetos).
+
+Python es un lenguaje de programación **orientado a objetos** y su modelo de datos también está basado en objetos.
+:::caution Atención
+Python es case-sensitive. Por lo que va a distinguir las mayúsculas y minúsculas de las variables.
+:::
+
+Para cada dato que aparece en un programa, Python crea un objeto que lo contiene. Cada objeto tiene:
+* Un **identificador único** (un número entero, distinto para cada objeto). Esto permite a Python referirse al objeto sin ambigüedades.
+* Un **tipo de datos** (entero, decimal, etc.) Esto le permite saber qué operaciones puede hacerse con el dato.
+* Un **valor** (el propio dato).
+
+### Print / Input
+Gracias a la función **print()** podemos mostrar de forma correcta las cadenas de texto (u otros objetos) en pantalla.
+:::note Ejemplo
+```py 
+# Comilla simple
+print('Hola Mundo')
+
+# Comilla doble
+print("Hola Mundo")
+
+# Agregar un template string
+print("""Primera línea
+Segunda línea""")
+```
+:::
+
+Para recibir datos del exterior usamos la función **input()**, la cual nos permite obtener texto escrito por teclado. Al llegar
+el programa a dicha función, se detiene esperando que el usuario escriba algo y pulse la tecla **Intro**.
+
+:::caution Atención
+De forma predeterminada, **input() convierte la entrada en una cadena**, aunque en ella escribamos un número. Si necesitamos convertir este valor
+a un entero, debemos utilizar la función **int()**
+
+```py
+year = int(input('¿En qué año estamos?'))
+```
+:::
+
+:::note Ejemplo
+```py
+# Sin argumento
+nombre = input()
+print(nombre)
+
+# Con argumento
+nombre = input('¿Cómo te llamas?')
+print(nombre)
+```
 :::
