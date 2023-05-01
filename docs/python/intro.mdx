@@ -3,11 +3,11 @@ id: intro
 title: Introducción
 ---
 
-### ¿Qué es Python?
+## ¿Qué es Python?
 Es un lenguaje de programación de código abierto, orientado a objetos, simple y fácil de entender. Tiene una sintaxis sencilla que cuenta con una vasta biblioteca de herramientas. 
 Es un lenguaje interpretado con **tipado dinámico**, **multiparadigma** y **multiplataforma**.
 
-### Principales usos
+## Principales usos
 * Inteligencia artificial
 * Big Data
 * Data Science
@@ -16,7 +16,7 @@ Es un lenguaje interpretado con **tipado dinámico**, **multiparadigma** y **mul
 * Bots :heart_eyes:
 * Etc
 
-### Tipos de número
+## Tipos de número
 Python distingue entre **enteros (int - long)**, **números de punto flotante (float)** y **números complejos (complex)**. A diferencia de otros lenguajes de programación, los números
 **tipo int** en Python 3 pueden ser pequeños o grandes, no tienen límite alguno.
 
@@ -24,7 +24,7 @@ Python distingue entre **enteros (int - long)**, **números de punto flotante (f
 Los números complejos son los que tienen parte imaginaria y es muy probable que no lo vayas a necesitar nunca. Se almacenan usando reales, ya que es una extensión de dichos números.
 :::
 
-### Cadena de texto
+## Cadena de texto
 Las cadenas o **strings (str)** son un tipo de dato compuesto por secuencias de caracteres que representan texto. Estas cadenas se delimitan
 mediante el uso de comillas simples o dobles.
 
@@ -40,12 +40,11 @@ También esto es una cadena de texto
 
 :::caution
 Los Strings sin **inmutables**, esto significa que no podemos sustituir ninguno de sus caracteres individualmente.
-En
 :::
 
 
 
-### Variables
+## Variables
 Las variables se pueden entender como "cajas" en las que se guardan datos, pero en Python las variables son "**etiquetas**" que permiten 
 hacer referencias a los datos (que se guardan en "cajas" llamadas objetos).
 
@@ -59,7 +58,7 @@ Para cada dato que aparece en un programa, Python crea un objeto que lo contiene
 * Un **tipo de datos** (entero, decimal, etc.) Esto le permite saber qué operaciones puede hacerse con el dato.
 * Un **valor** (el propio dato).
 
-### Precedencia
+## Precedencia
 El orden normal de las operaciones es de **izquierda a derecha**, evaluando en orden los siguientes operadores:
 
 * Términos entre paréntesis
@@ -68,7 +67,7 @@ El orden normal de las operaciones es de **izquierda a derecha**, evaluando en o
 * Suma y resta
 
 
-### Print / Input
+## Print / Input
 Gracias a la función **print()** podemos mostrar de forma correcta las cadenas de texto (u otros objetos) en pantalla.
 :::note Ejemplo
 ```py 
@@ -108,13 +107,13 @@ print(nombre)
 ```
 :::
 
-### Indexación de strings
+## Indexación de strings
 Cada uno de los caracteres de una cadena (en donde se incluyen los espacios y símbolos especiales), tienen asignado un índice.
 Este nos permite seleccionar su carácter asociado haciendo referencia a él entre corchetes en la variable que lo almacena.
 
 El **índice comienza en 0** para el primer carácter y en caso de buscar el **último corresponde al -1**.
 
-### Len
+## Len
 Así como tenemos ```print()``` para mostrar información en pantalla e ```input()``` para obtener datos externos, Python nos brinda
 otra función para conocer la longitud de los Strings llamada len().
 
@@ -124,7 +123,7 @@ print(len(nombre))
 >>> 5
 ```
 
-### Slice
+## Slice
 Es una función que nos permite seleccionar una parte de la cadena en base a la notación ```[inicio:fin:paso]```.
 
 **Inicio**:
@@ -134,7 +133,7 @@ Es el índice del primer carácter de la porción de la cadena que queremos sele
 Es el índice del último carácter no incluido de la porción de la cadena que queremos seleccionar.
 
 **Paso**:
-Indica cúantos caracteres seleccionamos entre las posiciones de inicio y fin.
+Indica cuántos caracteres seleccionamos entre las posiciones de inicio y fin.
 
 ```py 
 cadena = 'Python'
@@ -145,3 +144,92 @@ cadena = 'Python'
 print(cadena[0:4:1])
 >>> Pyth
 ```
+
+:::tip Ayudita
+Si utilizamos **[::-1]** sobre una cadena de texto, esta nos retorna la cadena al revés. 
+
+```py
+cadena = “acitámetaM ,5.8 ,otipeP ordeP”
+cadena_reverse = cadena[::-1]
+print(cadena_reverse)
+>>>Pedro Pepito, 8.5, Matemática
+```
+:::
+
+## Listas y Tuplas
+Las listas son un tipo de dato que nos permite almacenar variables, números, cadenas de textos, otras listas, etc. 
+Dichos valores, deben estar separados por comas dentro de los corchetes.
+
+Al igual que los Strings las listas tienen un índice y se puede utilizar el slicing para recorrerlos con la ventaja de que, en este caso, si podemos
+modificar los valores de sus índices ya que las listas son mutables.
+
+```py
+# Consulta por Slicing
+lista = [10, 'Pedro', '3', 4]
+print(lista[-2:])
+>>> ['3',4]
+
+# Modificación por Slicing
+letras = ['a','b','c','d','e','f']
+letras[:3] = ['A','B','C']
+print(letras)
+>>> ['A', 'B', 'C', 'd', 'e', 'f']
+
+# Borrado por Slicing
+letras[:3] = []
+print(letras)
+>>> ['d', 'e', 'f']
+```
+
+Las tuplas son similares a las listas, con la diferencia de que estas son inmutables, por lo que no podremos modificarlas
+una vez instanciadas.
+
+### Funciones de listas
+
+#### append()
+Nos permite agregar un nuevo ítem al **final** de una lista. 
+
+```py
+letras = []
+letras.append('a')
+letras.append('b')
+print(letras)
+>>> ['a', 'b']
+```
+
+#### pop()
+Al contrario de append(), en este caso nos permite eliminar el último ítem de la lista.
+
+```py
+letras = ['a', 'b','c','d']
+letras.pop()
+print(letras)
+>>> ['a', 'b','c']
+
+letras.pop(0)
+print(letras)
+>>> [ 'b','c']
+```
+
+#### count()
+Nos permite contar cuantas veces nuestro ítem se repite en la lista.
+
+```py
+numeros = [1,1,3,2,5,2,1]
+print(numeros.count(1))
+>>> 3
+```
+
+#### index()
+Nos permite buscar nuestro ítem y nos retorna el índice en el que se encuentra. En caso de haber 
+varios valores iguales, **solo nos retornará el primero que encuentre**.
+
+```py
+letras = ['a','b','c','a']
+print(letras.index('a'))
+>>> 0
+```
+
+:::caution Atención
+Si se intenta buscar un valor fuera de lista, retornará un error.
+:::

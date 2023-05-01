@@ -1,0 +1,67 @@
+---
+id: compuertas-logicas
+title: Compuertas lógicas
+---
+
+## Tablas de la verdad
+### AND & NAND
+
+**AND**:
+Todas las entradas deben ser **T** para que retorne **T**.
+
+| F | F | F | T |
+|---|---|---|---|
+| F | T | F | T |
+| F | F | T | T |
+
+**NAND**:
+Todas las entradas deben ser **T** para que retorne **F**.
+
+| T | T | T | F |
+|---|---|---|---|
+| F | T | F | T |
+| F | F | T | T |
+
+
+### OR & NOR
+
+**OR**:
+Siempre que una entrada sea **T** va a retornar **T**.
+
+| F | T | T | T |
+|---|---|---|---|
+| F | T | F | T |
+| F | F | T | T |
+
+**NOR**:
+Siempre que ninguna entrada sea **T** va a retornar **T**.
+
+| T | F | F | F |
+|---|---|---|---|
+| F | T | F | T |
+| F | F | T | T |
+
+### XOR & XAND
+**XOR**: 
+Siempre que las entradas sean diferentes va a retornar **T**.
+
+| F | T | T | F |
+|---|---|---|---|
+| F | T | F | T |
+| F | F | T | T |
+
+**XAND**: 
+Siempre que las entradas sean iguales va a retornar **T**.
+
+| T | F | F | T |
+|---|---|---|---|
+| F | T | F | T |
+| F | F | T | T |
+
+### NOT 
+Siempre retorna el contrario de lo que entra.
+
+| T | F |
+|---|---|
+| F | T |
+
