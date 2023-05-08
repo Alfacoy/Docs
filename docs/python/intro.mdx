@@ -3,6 +3,12 @@ id: intro
 title: Introducción
 ---
 
+:::info Enlace de utilidad
+[Web oficial de Python](https://www.python.org/)
+
+[Documentación de Python](https://docs.python.org/3/)
+:::
+
 ## ¿Qué es Python?
 Es un lenguaje de programación de código abierto, orientado a objetos, simple y fácil de entender. Tiene una sintaxis sencilla que cuenta con una vasta biblioteca de herramientas. 
 Es un lenguaje interpretado con **tipado dinámico**, **multiparadigma** y **multiplataforma**.
@@ -233,3 +239,74 @@ print(letras.index('a'))
 :::caution Atención
 Si se intenta buscar un valor fuera de lista, retornará un error.
 :::
+
+## Condicionales
+
+### If / Elif / Else
+Al utilizar el condicional **if** le indicamos a Python que queremos ejecutar una porción de código
+siempre y cuando se cumplan las condiciones dadas. 
+
+De no cumplirse la primera condición, **elif** nos permite hacer lo mismo ampliando más las condiciones posibles.
+
+Y, en el caso de que ninguna condición sea verdadera, se ejecutará el **else** como porción de código por defecto.
+
+```py
+A = 30
+if A < 10:
+    print('Es menor a 10')
+elif A < 15:
+    print('Es menor a 15')
+elif A < 20:
+    print('Es menor a 20')
+else:
+    print('Es mayor a 20')
+```
+
+## Iteraciones
+
+### While
+Nos permite repetir un fragmento de código mientras una condición lógica sea Verdadera.
+
+```py
+num = 0
+while num <= 3:
+    print(num) 
+    num += 1
+
+# El else dentro del while nos permite ejecutar una porción de código cuando se cumple la condición del while.
+chance  = 1
+while chance <= 3:
+  txt = input("Escribe SI: ")
+  if txt == "SI":
+     print("Ok, lo conseguiste en el intento", chance)
+     break
+  chance += 1
+else:
+  print("Has agotado tus tres intentos")
+
+```
+
+#### break
+Con esta instrucción podemos cortar la ejecución de nuestro bucle.
+
+#### continue
+Con esta instrucción vamos a poder volver al inicio del bucle.
+
+#### pass
+:::caution Pendiente
+Tengo que averiguar bien cual es su uso y documentarlo.
+:::
+
+### For
+Se utiliza para recorrer un objeto iterable, como una lista o tupla y ejecutar una porción de código sobre ellos.
+
+```py
+lista = [1,2,3,4,5]
+for valor in lista:
+    print('Soy un ítem de la lista y valgo', valor)
+
+### range(inicio,fin,pasos)
+for valor in range(10,40,2):
+    print('Soy un ítem de la lista y valgo', valor)
+
+```
