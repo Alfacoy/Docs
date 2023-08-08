@@ -1,7 +1,7 @@
 ---
 id: email
 title: Email to Case
-sidebar_position: 2
+sidebar_position: 10
 ---
 
 :::info Enlace de utilidad
@@ -82,6 +82,16 @@ El problema en este caso es que faltan agregar ciertas configuraciones a nuestra
 **3 - Configuración | Administrar | Administración de correo electrónico | Disponibilidad**
 * Hay que establecer el **acceso de enviar correo electrónico** al nivel de acceso **Todos los correos electrónicos**. 
 
+### Cuenta y Contacto no se autocompleta
+:::info Enlace de utilidad
+[Help Salesforce - Cuenta y Contacto no se autocompletan desde un Email To Case](https://help.salesforce.com/s/articleView?id=000386528&type=1)
+:::
+Cuando un caso se genera desde el Email To Case, hay una automatización que nos ayuda completando tanto Cuenta como Contacto si coinciden con el
+correo electrónico web, de lo contrario no lo autocompleta.
 
+En caso de que sepamos que el correo electrónico es de un cliente nuestro y no se esté completando, hay 3 posibles razones por la que esté fallando:
+* No coincide el correo electrónico con ningún contacto.
+* El correo electrónico coincidió con más de un contacto.
+* Email to Case busca en los campos de email custom y estándar de los contactos. Si hay múltiples resultados no hace la relación.
 
 

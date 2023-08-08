@@ -1,6 +1,7 @@
 ---
 id: intro
 title: Introducción
+sidebar_position: 1 
 ---
 
 :::info Enlace de utilidad
@@ -166,8 +167,8 @@ print(cadena_reverse)
 Las listas son un tipo de dato que nos permite almacenar variables, números, cadenas de textos, otras listas, etc. 
 Dichos valores, deben estar separados por comas dentro de los corchetes.
 
-Al igual que los Strings las listas tienen un índice y se puede utilizar el slicing para recorrerlos con la ventaja de que, en este caso, si podemos
-modificar los valores de sus índices ya que las listas son mutables.
+Al igual que los Strings las listas tienen un índice y se puede utilizar el slicing para recorrerlos con la ventaja de que, en este caso, si **podemos
+modificar los valores de sus índices ya que las listas son mutables**.
 
 ```py
 # Consulta por Slicing
@@ -187,7 +188,7 @@ print(letras)
 >>> ['d', 'e', 'f']
 ```
 
-Las tuplas son similares a las listas, con la diferencia de que estas son inmutables, por lo que no podremos modificarlas
+**Las tuplas** son similares a las listas, con la diferencia de que estas **son inmutables**, por lo que no podremos modificarlas
 una vez instanciadas.
 
 ### Funciones de listas
@@ -239,6 +240,14 @@ print(letras.index('a'))
 :::caution Atención
 Si se intenta buscar un valor fuera de lista, retornará un error.
 :::
+
+#### list()
+Convierte un iterable en una lista.
+```py
+vocales = 'aeiou'
+print(list(vocales))
+>>> ['a','e','i','o','u']
+```
 
 ## Condicionales
 
@@ -309,3 +318,135 @@ for valor in range(10,40,2):
     print('Soy un ítem de la lista y valgo', valor)
 
 ```
+## Conjuntos
+Es una colección no ordenada de objetos únicos (no hay elementos duplicados). En ellos se nos permite
+guardar enteros, cadenas de texto y variables de forma homogenea y heterogenea pero no objetos mutables (listas, diccionarios u otros 
+conjuntos). 
+
+Si bien son mutables como las listas, una diferencia con ellas es que en los conjuntos **no podemos
+utilizar slicing ni manejar índices**.
+
+```py
+numeros = {1,2,3,4}
+palabras = {"Hola", "como", "estas", "?"}
+heterogeneo = {1, 2, "Hola", 4}
+conjunto_vacio = set()
+```
+### Funciones de conjuntos
+
+#### set()
+Convierte un iterable a un conjunto.
+```py
+vocales = ['a','e','i','o','u']
+mi_set = set(vocales)
+print(mi_set)
+>>> ['a','e','i','o','u']
+```
+
+#### add()
+Nos permite agregar un nuevo ítem al conjunto así como también realizar operaciones aritméticas
+dentro de este.
+
+```py
+numeros = {1,2,3,4}
+numeros.add(5)
+numeros.add(3*2)
+print(numeros)
+>>> {1, 2, 3, 4, 5, 6}
+```
+
+#### update()
+Nos sirve para insertar múltiples elementos iterables (tuplas, string, listas, etc).
+
+```py
+numeros = {1,2,3,4}
+numeros.update([5,6,7,8])
+numeros.update(range(9,12))
+print(numeros)
+>>> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+```
+
+#### len()
+Nos ayuda a saber la longitud de nuestro conjunto.
+
+#### discard()
+Nos permite descartar un valor dentro del conjunto, en caso de que dicho valor no exista se omite la operación.
+
+```py
+numeros = {1,2,3,4}
+numeros.discard(2)
+numeros.discard(10)
+print(numeros)
+>>> {1, 3, 4}
+```
+
+#### remove()
+Es similar al discard, pero en caso de que no exista el valor a remover nos arroja un error.
+
+#### in()
+Nos sirve para saber si un valor se encuentra dentro de nuestro conjunto.
+
+```py
+numeros = {1,2,3,4}
+print(2 in numeros)
+>>> True
+print(10 in numeros)
+>>> False
+```
+
+#### clear()
+Nos sirve para eliminar todos los valores del conjunto.
+
+```py
+numeros = {1,2,3,4}
+numeros.clear()
+print(numeros)
+>>> set()
+```
+
+#### pop()
+Remueve del conjunto el primer elemento.
+
+```py
+numeros = {1,2,3,4}
+numeros.pop()
+numeros.pop()
+print(numeros)
+>>> {3, 4}
+```
+
+## Diccionarios
+Es una colección no ordenada de objetos (no posee un índice) la cúal para identificar un elementro
+dentro de esta se utiliza una **clave** y su contenido es el **valor**. Podemos modificar sus valores ingresando
+desde su clave.
+
+```py
+colores = {"amarillo": "yellow", "azul": "blue"}
+print(colores["amarillo"])
+>>> yellow
+
+colores["azul"] = "orange"
+print(colores["azul"])
+>>> orange
+```
+
+Si necesitamos agregar nuevos valores al diccionario, basta con agregarlos de la siguiente manera:
+```py
+colores = {"amarillo": "yellow", "azul": "blue"}
+colores["rojo"] = "red"
+print(colores)
+>>> {'amarillo': 'yellow', 'azul': 'blue', 'rojo': 'red'}
+
+colores.update("verde": "green", "negro": "black")
+print(colores)
+>>> 
+```
+
+También contaremos con las funciones de:
+* len
+* del
+* in
+* update
+
+## Funciones
+## Manejo de archivos
