@@ -12,7 +12,7 @@ sidebar_position: 1
 
 ## ¿Qué es Python?
 Es un lenguaje de programación de código abierto, orientado a objetos, simple y fácil de entender. Tiene una sintaxis sencilla que cuenta con una vasta biblioteca de herramientas. 
-Es un lenguaje interpretado con **tipado dinámico**, **multiparadigma** y **multiplataforma**.
+Es interpretado con **tipado dinámico**, **multiparadigma** y **multiplataforma**.
 
 ## Principales usos
 * Inteligencia artificial
@@ -23,35 +23,9 @@ Es un lenguaje interpretado con **tipado dinámico**, **multiparadigma** y **mul
 * Bots :heart_eyes:
 * Etc
 
-## Tipos de número
-Python distingue entre **enteros (int - long)**, **números de punto flotante (float)** y **números complejos (complex)**. A diferencia de otros lenguajes de programación, los números
-**tipo int** en Python 3 pueden ser pequeños o grandes, no tienen límite alguno.
+---
 
-:::note Nota
-Los números complejos son los que tienen parte imaginaria y es muy probable que no lo vayas a necesitar nunca. Se almacenan usando reales, ya que es una extensión de dichos números.
-:::
-
-## Cadena de texto
-Las cadenas o **strings (str)** son un tipo de dato compuesto por secuencias de caracteres que representan texto. Estas cadenas se delimitan
-mediante el uso de comillas simples o dobles.
-
-:::note Ejemplo
-"Esto es una cadena de texto"
-
-'Esto es una cadena de texto también'
-
-"""
-También esto es una cadena de texto
-"""
-:::
-
-:::caution
-Los Strings sin **inmutables**, esto significa que no podemos sustituir ninguno de sus caracteres individualmente.
-:::
-
-
-
-## Variables
+## ¿Qué es una variable?
 Las variables se pueden entender como "cajas" en las que se guardan datos, pero en Python las variables son "**etiquetas**" que permiten 
 hacer referencias a los datos (que se guardan en "cajas" llamadas objetos).
 
@@ -73,8 +47,265 @@ El orden normal de las operaciones es de **izquierda a derecha**, evaluando en o
 * Multiplicación y división
 * Suma y resta
 
+## Tipos de datos
 
-## Print / Input
+### Enteros
+Python distingue entre **enteros (int - long)**, **números de punto flotante (float)** y **números complejos (complex)**. A diferencia de otros lenguajes de programación, los números
+**tipo int** en Python 3 pueden ser pequeños o grandes, no tienen límite alguno.
+
+:::note Nota
+Los números complejos son los que tienen parte imaginaria y es muy probable que no lo vayas a necesitar nunca. Se almacenan usando reales, ya que es una extensión de dichos números.
+:::
+
+### Cadena de texto
+Las cadenas o **strings (str)** son un tipo de dato compuesto por secuencias de caracteres que representan texto. Estas cadenas se delimitan
+mediante el uso de comillas simples o dobles.
+
+:::note Ejemplo
+"Esto es una cadena de texto"
+
+'Esto es una cadena de texto también'
+
+"""
+También esto es una cadena de texto
+"""
+:::
+
+:::caution Atención
+Los Strings son **inmutables**, esto significa que no podemos sustituir ninguno de sus caracteres individualmente.
+:::
+
+Cada uno de los caracteres de una cadena (en donde se incluyen los espacios y símbolos especiales), tienen asignado un índice.
+Este nos permite seleccionar su carácter asociado haciendo referencia a él entre corchetes en la variable que lo almacena.
+
+El **índice comienza en 0** para el primer carácter y en caso de buscar el **último corresponde al -1**.
+
+### Slicing
+Nos permite seleccionar una parte de la cadena en base a la notación ```[inicio:fin:paso]```.
+
+**Inicio**:
+Es el índice del primer carácter de la porción de la cadena que queremos seleccionar.
+
+**Fin**:
+Es el índice del último carácter no incluido de la porción de la cadena que queremos seleccionar.
+
+**Paso**:
+Indica cuántos caracteres seleccionamos entre las posiciones de inicio y fin.
+
+```py 
+cadena = 'Python'
+print(cadena[2:6:2])
+>>> to
+
+cadena = 'Python'
+print(cadena[0:4:1])
+>>> Pyth
+```
+
+:::tip Ayudita
+Si utilizamos **[::-1]** sobre una cadena de texto, esta nos retorna la cadena al revés. 
+
+```py
+cadena = “acitámetaM ,5.8 ,otipeP ordeP”
+cadena_reverse = cadena[::-1]
+print(cadena_reverse)
+>>>Pedro Pepito, 8.5, Matemática
+```
+:::
+
+### Listas y Tuplas
+Las listas son un tipo de dato que nos permite almacenar variables, números, cadenas de textos, otras listas, etc. 
+Dichos valores, deben estar separados por comas dentro de los corchetes.
+
+Al igual que los Strings las listas tienen un índice y se puede utilizar el slicing para recorrerlos con la ventaja de que, en este caso, si **podemos
+modificar los valores de sus índices ya que las listas son mutables**.
+
+```py
+# Consulta por Slicing
+lista = [10, 'Pedro', '3', 4]
+print(lista[-2:])
+>>> ['3',4]
+
+# Modificación por Slicing
+letras = ['a','b','c','d','e','f']
+letras[:3] = ['A','B','C']
+print(letras)
+>>> ['A', 'B', 'C', 'd', 'e', 'f']
+
+# Borrado por Slicing
+letras[:3] = []
+print(letras)
+>>> ['d', 'e', 'f']
+```
+
+:::info Más información
+**Las tuplas** son similares a las listas, con la diferencia de que estas **son inmutables**, por lo que no podremos modificarlas
+una vez instanciadas. Son de **SOLO LECTURA**.
+:::
+
+### Diccionarios
+Es una colección no ordenada de objetos (no posee un índice) la cúal para identificar un elementro
+dentro de esta se utiliza una **clave** y su contenido es el **valor**. Podemos modificar sus valores ingresando
+desde su clave.
+
+```py
+colores = {"amarillo": "yellow", "azul": "blue"}
+print(colores["amarillo"])
+>>> yellow
+
+colores["azul"] = "orange"
+print(colores["azul"])
+>>> orange
+```
+
+Si necesitamos agregar nuevos valores al diccionario, basta con agregarlos de la siguiente manera:
+```py
+colores = {"amarillo": "yellow", "azul": "blue"}
+colores["rojo"] = "red"
+print(colores)
+>>> {'amarillo': 'yellow', 'azul': 'blue', 'rojo': 'red'}
+
+colores.update("verde": "green", "negro": "black")
+print(colores)
+>>> 
+```
+
+### Conjuntos
+Es una colección no ordenada de objetos únicos (no hay elementos duplicados). En ellos se nos permite
+guardar enteros, cadenas de texto y variables de forma homogenea y heterogenea pero no objetos mutables (listas, diccionarios u otros 
+conjuntos). 
+
+Si bien son mutables como las listas, una diferencia con ellas es que en los conjuntos **no podemos
+utilizar slicing ni manejar índices**, así como **tampoco puede tener valores duplicados**.
+
+```py
+numeros = {1,2,3,4}
+palabras = {"Hola", "como", "estas", "?"}
+heterogeneo = {1, 2, "Hola", 4}
+conjunto_vacio = set()
+```
+
+## Condicionales
+
+### If / Elif / Else
+Al utilizar el condicional **if** le indicamos a Python que queremos ejecutar una porción de código
+siempre y cuando se cumplan las condiciones dadas. 
+
+De no cumplirse la primera condición, **elif** nos permite hacer lo mismo ampliando más las condiciones posibles.
+
+Y, en el caso de que ninguna condición sea verdadera, se ejecutará el **else** como porción de código por defecto.
+
+```py
+A = 30
+if A < 10:
+    print('Es menor a 10')
+elif A < 15:
+    print('Es menor a 15')
+elif A < 20:
+    print('Es menor a 20')
+else:
+    print('Es mayor a 20')
+```
+
+### Match - Case
+A partir de la versión 3.10 contamos con una sentencia Switch para utilizar. 
+```py
+select = input("Seleccione una opción: ")
+
+match select: 
+    case "1":
+        print("Carguemos una nueva receta.")
+    case "2":
+        print("Veamos las recetas creadas.")
+    case _:
+        print("No es una opción válida.")
+```
+
+
+## Iteraciones
+
+### For
+Se utiliza para recorrer un objeto iterable, como una lista o tupla y ejecutar una porción de código sobre ellos.
+
+```py
+lista = [1,2,3,4,5]
+for valor in lista:
+    print('Soy un ítem de la lista y valgo', valor)
+
+### range(inicio,fin,pasos)
+for valor in range(10,40,2):
+    print('Soy un ítem de la lista y valgo', valor)
+```
+
+### While
+Nos permite repetir un fragmento de código mientras una condición lógica sea Verdadera.
+
+```py
+num = 0
+while num <= 3:
+    print(num) 
+    num += 1
+
+# El else dentro del while nos permite ejecutar una porción de código cuando se cumple la condición del while.
+chance  = 1
+while chance <= 3:
+  txt = input("Escribe SI: ")
+  if txt == "SI":
+     print("Ok, lo conseguiste en el intento", chance)
+     break
+  chance += 1
+else:
+  print("Has agotado tus tres intentos")
+
+```
+
+#### break
+Con esta instrucción podemos cortar la ejecución de nuestro bucle.
+
+#### continue
+Con esta instrucción vamos a poder volver al inicio del bucle.
+
+
+## Operadores de pertenecia
+
+### in 
+Nos permite analizar si existe un fragmento dentro de un texto.
+```py
+texto = "Hola Mundo"
+print("Hola" in texto)
+>>> True
+
+numeros = {1,2,3,4}
+print(2 in numeros)
+>>> True
+
+print(10 in numeros)
+>>> False
+```
+
+## Operadores lógicos
+
+### AND
+Devuelve True si ambos operandos son verdaderos, de lo contrario, devuelve False.
+
+### OR
+Devuelve True si al menos uno de los operandos es verdadero, de lo contrario, devuelve False.
+
+### NOT
+Devuelve la negación lógica del operando; si el operando es True, devuelve False; si el operando es False, devuelve True.
+
+## Palabras reservadas
+### pass
+La utilizaremos cuando queramos crear una clase, método, función, bucle o condicional, pero en el que todavía no queramos definir ningún comportamiento por lo que le
+indica al programa que ignore esa condición y continúe ejecutando el programa como de costumbre
+
+### del
+Se utiliza para eliminar elementos de una estructura de datos o para eliminar variables.
+
+
+## Funciones incorporadas
+
+### Print / Input
 Gracias a la función **print()** podemos mostrar de forma correcta las cadenas de texto (u otros objetos) en pantalla.
 :::note Ejemplo
 ```py 
@@ -114,86 +345,194 @@ print(nombre)
 ```
 :::
 
-## Indexación de strings
-Cada uno de los caracteres de una cadena (en donde se incluyen los espacios y símbolos especiales), tienen asignado un índice.
-Este nos permite seleccionar su carácter asociado haciendo referencia a él entre corchetes en la variable que lo almacena.
+### type
+Nos retorna el tipo de dato que estamos manipulando.
+```py
+text = "Quiero volver a Neuquen a fin de año."
+print(type(text))
+>>> <class 'str'>
+```
 
-El **índice comienza en 0** para el primer carácter y en caso de buscar el **último corresponde al -1**.
-
-## Len
-Así como tenemos ```print()``` para mostrar información en pantalla e ```input()``` para obtener datos externos, Python nos brinda
-otra función para conocer la longitud de los Strings llamada len().
+### len
+Nos permite conocer longitudes.
 
 ```py
 nombre = 'Brian'
 print(len(nombre))
 >>> 5
 ```
+### range
+Se utiliza para generar una secuencia de números. Se puede utilizar en bucles for o para crear listas de números enteros.
+```range(inicio, fin, paso)```
+```py
+secuencia = range(5)
+print(list(secuencia))
+>>> [0, 1, 2, 3, 4]
 
-## Slice
-Es una función que nos permite seleccionar una parte de la cadena en base a la notación ```[inicio:fin:paso]```.
-
-**Inicio**:
-Es el índice del primer carácter de la porción de la cadena que queremos seleccionar.
-
-**Fin**:
-Es el índice del último carácter no incluido de la porción de la cadena que queremos seleccionar.
-
-**Paso**:
-Indica cuántos caracteres seleccionamos entre las posiciones de inicio y fin.
-
-```py 
-cadena = 'Python'
-print(cadena[2:6:2])
->>> to
-
-cadena = 'Python'
-print(cadena[0:4:1])
->>> Pyth
+secuencia = range(1, 10, 2)
+print(list(secuencia))
+>>> [1, 3, 5, 7, 9]
 ```
 
-:::tip Ayudita
-Si utilizamos **[::-1]** sobre una cadena de texto, esta nos retorna la cadena al revés. 
+### str
+Convierte a un objeto al tipo de dato cadena de texto.
 
 ```py
-cadena = “acitámetaM ,5.8 ,otipeP ordeP”
-cadena_reverse = cadena[::-1]
-print(cadena_reverse)
->>>Pedro Pepito, 8.5, Matemática
+numero = 42
+cadena = str(numero)
+print(cadena)
+>>> "42"
 ```
+
+### int
+Convierte a un objeto al tipo de dato entero.
+
+```py
+cadena = "42"
+numero = int(cadena)
+print(numero)
+>>> 42
+```
+
+### list
+Convierte un iterable en una lista.
+```py
+vocales = 'aeiou'
+print(list(vocales))
+>>> ['a','e','i','o','u']
+```
+
+### set
+Convierte un iterable a un conjunto.
+```py
+vocales = ['a','e','i','o','u']
+mi_set = set(vocales)
+print(mi_set)
+>>> {'i', 'e', 'u', 'a', 'o'}
+```
+
+### tuple
+Convierte un iterable a una tupla.
+```py
+vocales = ['a','e','i','o','u']
+mi_set = tuple(vocales)
+print(mi_set)
+>>> ('a', 'e', 'i', 'o', 'u')
+```
+
+### dict
+Sirve para crear un nuevo diccionario o para convertir otros tipos de datos en diccionarios.
+```py
+lista_claves = ['a', 'b', 'c']
+lista_valores = [1, 2, 3]
+nuevo_diccionario = dict(zip(lista_claves, lista_valores))
+print(nuevo_diccionario)
+>>> {'a': 1, 'b': 2, 'c': 3}
+```
+
+### zip
+se utiliza para combinar elementos de iterables (como listas, tuplas, etc.) y crear un iterador que genera tuplas de elementos emparejados.
+```py
+numeros = [1, 2, 3]
+letras = ['a', 'b', 'c']
+pares = zip(numeros, letras)
+lista_pares = list(pares)
+print(lista_pares) 
+>>> [(1, 'a'), (2, 'b'), (3, 'c')]
+```
+
+:::caution Atención
+Es importante tener en cuenta que si las listas tienen longitudes diferentes, **zip** generará tuplas hasta la longitud 
+del iterable más corto. Los elementos adicionales del iterable más largo se ignorarán en la combinación.
 :::
 
-## Listas y Tuplas
-Las listas son un tipo de dato que nos permite almacenar variables, números, cadenas de textos, otras listas, etc. 
-Dichos valores, deben estar separados por comas dentro de los corchetes.
-
-Al igual que los Strings las listas tienen un índice y se puede utilizar el slicing para recorrerlos con la ventaja de que, en este caso, si **podemos
-modificar los valores de sus índices ya que las listas son mutables**.
-
+## Métodos para cadenas
+###  Upper
+Convierte una cadena a mayúsculas.
 ```py
-# Consulta por Slicing
-lista = [10, 'Pedro', '3', 4]
-print(lista[-2:])
->>> ['3',4]
-
-# Modificación por Slicing
-letras = ['a','b','c','d','e','f']
-letras[:3] = ['A','B','C']
-print(letras)
->>> ['A', 'B', 'C', 'd', 'e', 'f']
-
-# Borrado por Slicing
-letras[:3] = []
-print(letras)
->>> ['d', 'e', 'f']
+cadena = "hola mundo"
+cadena_mayusculas = cadena.upper()
+print(cadena_mayusculas)
+>>> HOLA MUNDO
 ```
 
-**Las tuplas** son similares a las listas, con la diferencia de que estas **son inmutables**, por lo que no podremos modificarlas
-una vez instanciadas.
+### Lower
+Convierte una cadena a minúsculas.
+```py
+cadena = "HOLA MUNDO"
+cadena_minusculas = cadena.lower()
+print(cadena_minusculas)
+>>> hola mundo
+```
 
-### Funciones de listas
+### Swapcase
+Intercambia mayúsculas y minúsculas en una cadena.
+```py
+cadena = "Hola Mundo"
+cadena_swap = cadena.swapcase()
+print(cadena_swap)
+>>> hOLA mUNDO
+```
 
-#### append()
+### Startswith
+Verifica si una cadena comienza con un prefijo específico.
+```py
+cadena = "Hola Mundo"
+comienza_con_hola = cadena.startswith("Hola")
+print(comienza_con_hola)
+>>> True
+```
+
+### Endswith
+Verifica si una cadena termina con un sufijo específico.
+```py
+cadena = "Hola Mundo"
+termina_con_mundo = cadena.endswith("Mundo") 
+print(termina_con_mundo)
+>>> True
+```
+
+### Replace
+Reemplaza parte de una cadena por otra.
+```py
+cadena = "Hola Mundo"
+cadena_reemplazada = cadena.replace("Mundo", "Python")
+print(cadena_reemplazada)
+>>> Hola Python
+```
+
+### Capitalize
+Convierte el primer carácter de una cadena a mayúscula y el resto a minúsculas.
+```py
+cadena = "hola mundo"
+cadena_capitalizada = cadena.capitalize()
+print(cadena_capitalizada)
+>>> Hola mundo
+```
+
+### title
+Convierte cada palabra en la cadena a que comience con mayúscula.
+```py
+cadena = "hola mundo"
+cadena_titulada = cadena.title()
+print(cadena_titulada)
+>>> Hola Mundo
+```
+
+### isdigit
+Verifica si todos los caracteres de la cadena son dígitos.
+```py
+cadena_digitos = "12345"
+es_digito = cadena_digitos.isdigit() 
+print(es_digito)
+>>> True
+```
+
+## Métodos para listas y tuplas
+### append
+:::info Más información
+Disponible unicamente para **listas**.
+:::
 Nos permite agregar un nuevo ítem al **final** de una lista. 
 
 ```py
@@ -204,8 +543,24 @@ print(letras)
 >>> ['a', 'b']
 ```
 
-#### pop()
-Al contrario de append(), en este caso nos permite eliminar el último ítem de la lista.
+### insert
+:::info Más información
+Disponible unicamente para **listas**.
+:::
+Insertar un elemento en una posición específica de una lista.
+
+```py
+mi_lista = [1, 2, 3, 4]
+mi_lista.insert(2, "nuevo elemento")
+print(mi_lista)
+>>> [1, 2, 'nuevo elemento', 3, 4]
+```
+
+### pop
+:::info Más información
+Disponible unicamente para **listas**.
+:::
+Al contrario de append(), en este caso nos permite eliminar el último ítem de la lista. También nos permite pasar por parámetro el indice a borrar.
 
 ```py
 letras = ['a', 'b','c','d']
@@ -218,7 +573,24 @@ print(letras)
 >>> [ 'b','c']
 ```
 
-#### count()
+### remove
+Elimina un valor de la lista que le pasemos. De no existir nos retorna error.
+```py
+mi_lista = [1, 2, 3, 4]
+mi_lista.remove(3)
+print(mi_lista)
+>>> [1, 2, 4]
+
+mi_lista = [1, 2, 3, 4]
+mi_lista.remove(34)
+print(mi_lista)
+>>> ValueError: list.remove(x): x not in list
+```
+
+### count
+:::info Más información
+Disponible para **listas**, **tuplas** y **cadenas de caracteres**.
+:::
 Nos permite contar cuantas veces nuestro ítem se repite en la lista.
 
 ```py
@@ -227,7 +599,10 @@ print(numeros.count(1))
 >>> 3
 ```
 
-#### index()
+### index
+:::info Más información
+Disponible para **listas**, **tuplas** y **cadenas de caracteres**.
+:::
 Nos permite buscar nuestro ítem y nos retorna el índice en el que se encuentra. En caso de haber 
 varios valores iguales, **solo nos retornará el primero que encuentre**.
 
@@ -241,109 +616,37 @@ print(letras.index('a'))
 Si se intenta buscar un valor fuera de lista, retornará un error.
 :::
 
-#### list()
-Convierte un iterable en una lista.
+### sort
+Ordena automáticamente los ítems de una lista por su valor de menor a mayor o a la inversa.
 ```py
-vocales = 'aeiou'
-print(list(vocales))
->>> ['a','e','i','o','u']
+mi_lista = [5, 2, 8, 1, 3]
+mi_lista.sort()
+print(mi_lista)
+>>> [1, 2, 3, 5, 8]
+
+mi_lista = [5, 2, 8, 1, 3]
+mi_lista.sort(reverse=True)
+print(mi_lista)
+>>> [8, 5, 3, 2, 1]
 ```
 
-## Condicionales
+:::caution Atención
+No puede ordenar listas que tenga almacenado diferentes tipos de datos.
+:::
 
-### If / Elif / Else
-Al utilizar el condicional **if** le indicamos a Python que queremos ejecutar una porción de código
-siempre y cuando se cumplan las condiciones dadas. 
-
-De no cumplirse la primera condición, **elif** nos permite hacer lo mismo ampliando más las condiciones posibles.
-
-Y, en el caso de que ninguna condición sea verdadera, se ejecutará el **else** como porción de código por defecto.
-
+### extend 
+Nos sirve para agregar los elementos de una lista al final de otra lista
 ```py
-A = 30
-if A < 10:
-    print('Es menor a 10')
-elif A < 15:
-    print('Es menor a 15')
-elif A < 20:
-    print('Es menor a 20')
-else:
-    print('Es mayor a 20')
+lista_1 = [1, 2, 3]
+lista_2 = [4, 5, 6]
+
+lista_1.extend(lista_2)
+print(lista_1) 
+>>> [1, 2, 3, 4, 5, 6]
 ```
 
-## Iteraciones
-
-### While
-Nos permite repetir un fragmento de código mientras una condición lógica sea Verdadera.
-
-```py
-num = 0
-while num <= 3:
-    print(num) 
-    num += 1
-
-# El else dentro del while nos permite ejecutar una porción de código cuando se cumple la condición del while.
-chance  = 1
-while chance <= 3:
-  txt = input("Escribe SI: ")
-  if txt == "SI":
-     print("Ok, lo conseguiste en el intento", chance)
-     break
-  chance += 1
-else:
-  print("Has agotado tus tres intentos")
-
-```
-
-#### break
-Con esta instrucción podemos cortar la ejecución de nuestro bucle.
-
-#### continue
-Con esta instrucción vamos a poder volver al inicio del bucle.
-
-#### pass
-La utilizaremos cuando queramos crear una clase, método, función, bucle o condicional, pero en el que todavía no queramos definir ningún comportamiento por lo que le
-indica al programa que ignore esa condición y continúe ejecutando el programa como de costumbre
-
-### For
-Se utiliza para recorrer un objeto iterable, como una lista o tupla y ejecutar una porción de código sobre ellos.
-
-```py
-lista = [1,2,3,4,5]
-for valor in lista:
-    print('Soy un ítem de la lista y valgo', valor)
-
-### range(inicio,fin,pasos)
-for valor in range(10,40,2):
-    print('Soy un ítem de la lista y valgo', valor)
-
-```
-## Conjuntos
-Es una colección no ordenada de objetos únicos (no hay elementos duplicados). En ellos se nos permite
-guardar enteros, cadenas de texto y variables de forma homogenea y heterogenea pero no objetos mutables (listas, diccionarios u otros 
-conjuntos). 
-
-Si bien son mutables como las listas, una diferencia con ellas es que en los conjuntos **no podemos
-utilizar slicing ni manejar índices**.
-
-```py
-numeros = {1,2,3,4}
-palabras = {"Hola", "como", "estas", "?"}
-heterogeneo = {1, 2, "Hola", 4}
-conjunto_vacio = set()
-```
-### Funciones de conjuntos
-
-#### set()
-Convierte un iterable a un conjunto.
-```py
-vocales = ['a','e','i','o','u']
-mi_set = set(vocales)
-print(mi_set)
->>> ['a','e','i','o','u']
-```
-
-#### add()
+## Métodos para conjuntos
+### add
 Nos permite agregar un nuevo ítem al conjunto así como también realizar operaciones aritméticas
 dentro de este.
 
@@ -355,7 +658,7 @@ print(numeros)
 >>> {1, 2, 3, 4, 5, 6}
 ```
 
-#### update()
+### update
 Nos sirve para insertar múltiples elementos iterables (tuplas, string, listas, etc).
 
 ```py
@@ -366,10 +669,7 @@ print(numeros)
 >>> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
 ```
 
-#### len()
-Nos ayuda a saber la longitud de nuestro conjunto.
-
-#### discard()
+### discard
 Nos permite descartar un valor dentro del conjunto, en caso de que dicho valor no exista se omite la operación.
 
 ```py
@@ -380,21 +680,11 @@ print(numeros)
 >>> {1, 3, 4}
 ```
 
-#### remove()
+### remove
 Es similar al discard, pero en caso de que no exista el valor a remover nos arroja un error.
 
-#### in()
-Nos sirve para saber si un valor se encuentra dentro de nuestro conjunto.
 
-```py
-numeros = {1,2,3,4}
-print(2 in numeros)
->>> True
-print(10 in numeros)
->>> False
-```
-
-#### clear()
+### clear
 Nos sirve para eliminar todos los valores del conjunto.
 
 ```py
@@ -404,8 +694,8 @@ print(numeros)
 >>> set()
 ```
 
-#### pop()
-Remueve del conjunto el primer elemento.
+### pop
+Remueve del conjunto un elemento aleatorio y lo retorna. Por lo general suele ser el primero, pero no deberíamos confiarnos ya que es una colección desordenada.
 
 ```py
 numeros = {1,2,3,4}
@@ -415,38 +705,76 @@ print(numeros)
 >>> {3, 4}
 ```
 
-## Diccionarios
-Es una colección no ordenada de objetos (no posee un índice) la cúal para identificar un elementro
-dentro de esta se utiliza una **clave** y su contenido es el **valor**. Podemos modificar sus valores ingresando
-desde su clave.
+## Métodos para diccionarios
 
+### get
+Retorna el valor asociado con la clave key en el diccionario. Si la clave no existe, retorna default (por defecto None si no se proporciona).
 ```py
-colores = {"amarillo": "yellow", "azul": "blue"}
-print(colores["amarillo"])
->>> yellow
-
-colores["azul"] = "orange"
-print(colores["azul"])
->>> orange
+mi_diccionario = {'a': 1, 'b': 2, 'c': 3}
+valor = mi_diccionario.get('a')
+print(valor) 
+>>> 1
 ```
 
-Si necesitamos agregar nuevos valores al diccionario, basta con agregarlos de la siguiente manera:
+### keys
+Retorna una vista que contiene todas las claves del diccionario.
 ```py
-colores = {"amarillo": "yellow", "azul": "blue"}
-colores["rojo"] = "red"
-print(colores)
->>> {'amarillo': 'yellow', 'azul': 'blue', 'rojo': 'red'}
-
-colores.update("verde": "green", "negro": "black")
-print(colores)
->>> 
+mi_diccionario = {'a': 1, 'b': 2, 'c': 3}
+claves = mi_diccionario.keys()
+print(claves)
+>>> dict_keys(['a', 'b', 'c'])
 ```
 
-También contaremos con las funciones de:
-* len
-* del
-* in
-* update
+### values
+Retorna una vista que contiene todos los valores del diccionario
+```py
+mi_diccionario = {'a': 1, 'b': 2, 'c': 3}
+valores = mi_diccionario.values()
+print(valores)
+>>> dict_values([1, 2, 3])
+```
 
-## Funciones
-## Manejo de archivos
+### items
+Retorna una vista que contiene tuplas de pares clave-valor del diccionario.
+```py
+mi_diccionario = {'a': 1, 'b': 2, 'c': 3}
+elementos = mi_diccionario.items()
+print(elementos)
+>>> dict_items([('a', 1), ('b', 2), ('c', 3)])
+```
+
+### clear
+Elimina todos los elementos del diccionario.
+```py
+mi_diccionario = {'a': 1, 'b': 2, 'c': 3}
+mi_diccionario.clear()
+print(mi_diccionario) 
+>>> {}
+```
+
+### pop
+Elimina la clave key del diccionario y retorna su valor. Si la clave no existe, retorna default (por defecto genera un error KeyError).
+```py
+mi_diccionario = {'a': 1, 'b': 2, 'c': 3}
+valor_eliminado = mi_diccionario.pop('b')
+print(valor_eliminado)
+>>> 2
+```
+
+### setdefault
+Retorna el valor asociado con la clave key en el diccionario. Si la clave no existe, inserta la clave con el valor default (por defecto None si no se proporciona) y retorna ese valor.
+```py
+mi_diccionario = {'a': 1, 'b': 2, 'c': 3}
+valor_default = mi_diccionario.setdefault('d', 10)
+print(valor_default)
+>>> 10
+```
+
+### update
+Actualiza el diccionario con elementos de otro diccionario u otro objeto iterable.
+```py
+mi_diccionario = {'a': 1, 'b': 2}
+mi_diccionario.update({'c': 3, 'd': 4})
+print(mi_diccionario)
+>>> {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+```
