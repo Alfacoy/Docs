@@ -1,5 +1,5 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+/* const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula'); */
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -77,21 +77,21 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://www.linkedin.com/in/bdurand601/',
               },
               {
                 label: 'Linkedin',
-                href: 'https://www.linkedin.com/in/durand18/',
+                href: 'https://www.linkedin.com/in/bdurand601/',
               }
             ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()}. Hecho con 💖 y <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer"><b>Docusaurus</b></a> por <a href="https://www.durandbrian.com/" target="_blank" rel="noopener noreferrer"><b>Brian Durand</b></a>.`,
       },
-      prism: {
+      /* prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      },
+      }, */
     }),
 };
 

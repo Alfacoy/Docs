@@ -31,18 +31,18 @@ siguiendo un camino o pasos.
 ## Predicados
 Son usados para encontrar un nodo específico o un nodo que contiene un valor específico.
 Siempre están entre medio de los corchetes "[ ]". Desde aquí también utilizaremos los típicos operadores:
-* '+', '-', '*' y 'div'
-* '=', '!=' o 'not()', '<' y '>'
-* 'and', 'or' y 'mod'
+* "+", "-", "*" y "div"
+* "=", "!=" o "not()", "\<" y ">"
+* "and", "or" y "mod"
 
 |Expresión               |Descripción                                                                |
 |------------------------|---------------------------------------------------------------------------|
 | [1]..[n]               | Selecciona el primer o **n** elemento hijo                                |
 | [last()]               | Selecciona el último hijo                                                 |
 | [last()-1] .. -n       | Selecciona el nodo anterior al último o **n**                             |
-| [position()<3] .. n    | Selecciona los primeros 2 nodos o **n** según corresponda                 |
+| [position() < 3] .. n    | Selecciona los primeros 2 nodos o **n** según corresponda                 |
 | [@lang]                | Selecciona todos los elementos con un atributo lang                       |
-| [@lang='en']           | Selecciona todos los elementos con un atributo lang y el valor 'en'       |
+| [@lang="en"]           | Selecciona todos los elementos con un atributo lang y el valor 'en'       |
 | [price > 35.00]        | Selecciona todos los elementos con un precio mayor a 35.00                |
 | [price > 35.00]/title  | Selecciona los títulos de todos los elementos con un precio mayor a 35.00 |
 
