@@ -61,10 +61,6 @@ const config = {
               {
                 label: 'Documentación',
                 href: '/'
-              },
-              {
-                label: 'Changelog',
-                href: '/changelog'
               }
             ]
           },
