@@ -1,0 +1,101 @@
+---
+id: seguridad-basica
+title: Seguridad básica
+sidebar_position: 10
+---
+
+:::info Ubicación
+
+Desde **Configuración > Seguridad** vamos a tener disponible varias herramientas para mejorar la seguridad de nuestra
+organización.
+
+::: 
+
+### Health Check
+Es una pestaña en donde se nos informa que tan bien está nuestra organización en términos de seguridad.
+Dependiendo nuestro nivel de seguridad, se nos va a dar una calificación y debajo de ella los puntos fuertes
+y a mejorar que tenemos. 
+
+### Setup Audit Trail
+:::info Enlace de utilidad
+En el **[Help de Salesforce](https://help.salesforce.com/s/articleView?id=sf.admin_monitorsetup.htm&type=5)**, podemos encontrar todos los trackeos disponibles para el Audit Trail.
+:::
+
+Nos sirve para ver los últimos 20 cambios que hubo en la organización en cuanto a configuración de la plataforma. 
+Por ejemplo, si creamos un nuevo campo para el objeto de cuentas o una nueva regla de validación, Audit Trail se encarga
+de trackear quien, cuando y qué cambios se hicieron.
+
+
+### Políticas de contraseña para toda la organización
+En la barra de búsqueda ingresamos "Password Policies", desde ahí podremos definir:
+* Los días en que se expira la contraseña.
+* Forzar que no se coloque una contraseña anterior.
+* El tamaño mínimo que tendría que tener la nueva contraseña.
+* Los valores que la componen (números, letras, símbolos y cantidades de estos).
+* Veces que se puede equivocar al ingresar la contraseña.
+* Tiempo de bloqueo en caso de superar las veces permitidas.
+* Obscurecer la respuesta secreta cuando se resetea la contraseña.
+* Etc.
+
+Una vez seteado lo anterior, toda la organización va a regirse bajo esas normas. 
+
+### Políticas de contraseña para perfiles
+Si necesitamos hacer más o menos fuerte la contraseña para un perfil determinado, debemos ingresar a este
+y dirigirnos a la sección inferior, donde podemos modificar todo lo anterior.
+
+De esta forma, si bien toda la organización tiene un nivel de seguridad determinado, cada perfil podría
+tener el suyo propio. Esto por lo general es más apropiado para perfiles que tengan un alto nivel de acceso
+a la organización como los administradores.
+
+### Expirar todas las contraseñas
+En la barra de búsqueda ingresamos "Expire All Passwords". Esto expira todas las contraseñas (incluidas las nuestras) y la próxima vez
+que intenten iniciar sesión se encontrarán con que deben setear una nueva.
+
+### Definir horas de sesión
+Esta también es una acción que debemos hacer desde el perfil que nos interesa. Debemos buscar una sección llamada
+"Login Hours" y presionar editar. 
+
+Una vez dentro, nos encontramos con una matriz de días y horas a la cual vamos a configurar para que nuestros 
+usuarios tengan el permiso de iniciar sesión.
+
+### IP de confianza para la organización
+Para acceder, debemos escribir en la búsqueda rápida "Network Access" y crear una nueva IP de confianza.
+Una vez que aplicamos un rango de IP y su descripción, nos va a permitir, siempre que iniciemos sesión dentro de ese rango,
+evitar la verificación de identidad y las integraciones no necesitarán el token de seguridad.
+
+Los usuarios fuera de esta IP de confianza podrán seguir conectandose, pero deberán ingresar todas las medidas
+de seguridad configuradas.
+
+:::caution Atención
+Esta acción no evita que tengamos que ingresar una contraseña para iniciar sesión. Solo evita que debamos verificar
+nuestra identidad aparte de ingresar el usuario y contraseña.
+:::
+
+### IP de confianza para los perfiles
+De igual manera se puede también limitar los accesos desde los perfiles. Solamente podrán iniciar sesión desde el o los rangos de IP
+permitidos. 
+
+
+## Información complementaria
+
+* Al momento de crear nuevos usuarios, a estos les llegará un mail con un enlace al que deben ingresar ANTES de los 7 días ya que luego expira.
+* Los nombres de usuarios deben ser únicos en todas las organizaciones de Salesforce y estos deben ser en formato de email (Por ejemplo: admin@bdurand.com).
+* Cuando modifiquemos el email del usuario, la notificación de aceptación del nuevo email va a llegar a email que hayamos 
+agregado, no al anterior.
+* **Resetear todas las contraseñas** no resetea las contraseñas que hayan sido marcadas como "La contraseña no caduca nunca" configurado en el perfil.
+---
+
+## Terminos de seguridad informática
+
+### PoLP
+Es un principio de seguridad informática que nos dice ofrecer el menor privilegio al usuario. **Solo tendría que tener acceso 
+a lo que necesita ver y hacer**. Si es un usuario que solo va a necesitar ver cuentas y editarlas, no debería tener permiso de
+borrar un registro o instalar un paquete externo en la instancia.
+
+### PAM
+"Privileged access management" es un conjunto de estrategias de ciberseguridad y tecnología que las organizaciones usan para controlar el
+nivel de acceso y permisos de los usuarios, procesos y sistemas. Un usuario privilegiado es por ejemplo un administrador del sistema, de base de datos, etc.
+
+### Least privilege 
+Es un principio que nos incita a brindar el menor permiso necesario para que nuestros usuarios puedan realizar sus actividades, ni más ni menos.
+Esto ayuda a que un usuario no haga más de lo que le corresponde, ya que esto podría ser una brecha en la seguridad.

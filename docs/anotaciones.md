@@ -1,0 +1,50 @@
+---
+id: notas
+title: Anotaciones
+sidebar_position: 2
+---
+
+### :blue_book: Pendiente de documentar
+* LWC
+* Bases de APEX
+
+### :closed_book: Guía de advertencias
+
+:::note Nota | Ejemplo | Mensaje del error
+Lo usamos para textos de anotación libre, errores o ejemplos.
+:::
+
+:::caution Atención | Pendiente 
+Lo usamos cuando damos advertencias sobre lo documentado y cuando notificamos que algo está pendiente de documentar.
+:::
+
+:::info Enlaces de utilidad | Ubicación | Más información
+Lo usamos cuando agregamos enlaces, ampliamos información o cuando damos la ubicación de una función dentro de Salesforce/otro.
+:::
+
+:::tip Ayudita
+Lo usamos cuando damos un consejo, recomendación o buena práctica.
+:::
+
+:::danger Descontinuado | Deprecado
+Lo usamos cuando se descontinúa una documentación o para cuando algo de lo documentado queda deprecado.
+:::
+
+### :rocket: Enlaces de utilidad
+
+**Varios** 
+* [Emojis Markdown](https://gist.github.com/rxaviers/7360908) (By [Rafael Xavier de Souza](https://github.com/rxaviers))
+* [WhatIsMyViewport](https://whatismyviewport.com/)
+* [Salesforce Header Creator](https://www.superqbit.com/app?id=SalesforceHeaderCreator)
+
+**Certificaciones de Salesforce**
+* [Certificación Salesforce JS Dev](https://trailhead.salesforce.com/es-MX/users/strailhead/trailmixes/prepare-for-your-salesforce-javascript-developer-i-credential)
+* [Certificación Salesforce Platform Dev](https://trailhead.salesforce.com/es-MX/users/strailhead/trailmixes/prepare-for-your-salesforce-platform-developer-i-credential)
+* [Certificación Salesforce Platform App Builder](https://trailhead.salesforce.com/es-MX/users/strailhead/trailmixes/prepare-for-your-salesforce-platform-app-builder-credential) :white_check_mark:
+* [Certificación Salesforce Admin](https://trailhead.salesforce.com/es-MX/users/strailhead/trailmixes/prepare-for-your-salesforce-administrator-credential) :white_check_mark:
+* [Certificación Salesforce Associate](https://trailhead.salesforce.com/es-MX/users/strailhead/trailmixes/prepare-for-your-salesforce-certified-associate-credential) :white_check_mark:
+
+**Documentaciones**
+* [Salesforce Developer Docs](https://developer.salesforce.com/docs)
+* [Documentación Twitch Developer](https://dev.twitch.tv/docs/)
+* [Documentación Discord Developer](https://discord.com/developers/docs/intro)

@@ -1,0 +1,43 @@
+---
+id: mi-dominio
+title: Mi dominio
+sidebar_position: 30
+---
+
+:::info Enlaces de utilidad
+**Trailhead**:
+https://trailhead.salesforce.com/es-MX/content/learn/modules/identity_login/identity_login_my_domain
+
+**Salesforce Help**:
+https://help.salesforce.com/s/articleView?id=sf.domain_name_overview.htm&type=5
+:::
+
+
+Es una función de Salesforce Identity que nos permite crear un subdominio personalizado dentro del dominio de Salesforce.
+
+Salesforce requiere que tengamos un **Mi dominio** para las siguientes acciones:
+* Trabajar en varias organizaciones de Salesforce desde un mismo navegador.
+* Configurar el inicio de sesión único (SSO) con proveedores de identidad externos.
+* Configurar proveedores de autenticación, como Google y Facebook, para que los usuarios puedan iniciar sesión con sus credenciales
+de cuenta de redes sociales.
+* Personalizar la página de inicio de sesión de la organización con su marca.
+
+Desde **Configuración > Mi dominio** podemos gestionar diferentes secciones, tales como: 
+* Detalles de dominio.
+* Ruteo.
+* Políticas.
+* Configuración de autenticación.
+
+Dentro de **Políticas**, vamos a poder:
+* Prevenir que tanto los usuarios como la API se logeen desde las URL de test.salesforce y login.salesforce.
+* Controlar que hacer cuando un usuario intenta usar la URL de instancia en lugar de la del dominio.
+    * **Redirigir a la misma página dentro del dominio**: no es bloqueante pero tampoco obliga a utilizar el dominio de la organización.
+    * **Redirigir con una advertencia a la misma página dentro del dominio**: no es bloqueante pero recuerda a los usuarios cúal es la URL que deben usar. Es la opción ideal para reforzar la identidad
+    de la marca.
+    * **No redirigir (No recomendado)**: es puramente bloqueante y solo se recomienda cuando todos los usuarios están acostumbrados a utilizar la URL de la marca.
+
+Dentro de **Configuración de autenticación**, vamos a poder: 
+* Elegir el tipo de página que vamos a utilizar (Standar o Discovery).
+* El servicio de autenticación (login form o SSO).
+* Métodos para autenticarse desde un celular.
+* Personalización de pantalla de inicio de sesión (Permite cambiar la imagen, fondo, etc).

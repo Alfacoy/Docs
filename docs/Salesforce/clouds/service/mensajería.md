@@ -1,0 +1,78 @@
+---
+id: msj-ws
+title: Mensajería Whatsapp
+sidebar_position: 50
+---
+
+:::info Enlaces de utilidad
+[Documentación oficial](https://help.salesforce.com/s/articleView?id=sf.livemessage_intro.htm&type=5)
+
+[Módulo Salesforce Messaging](https://trailhead.salesforce.com/es-MX/content/learn/modules/salesforce-messaging)
+:::
+
+### ¿Qué es la mensajería de Service Cloud?
+Es una función de Salesforce que nos permite recibir mensajes desde un chat web, WhatsApp, 
+Facebook Messenger y SMS. A su vez, le brinda a nuestros agentes la capacidad de responderlos desde
+la consola de servicio.
+
+
+### Objetos asignados
+Los dos objetos que se encargan de coordinar todos los mensajes de los clientes son:
+* Usuario de mensajería.
+* Sesión de mensajería.
+
+### :exclamation: Ciclo de vida de Sesión de Mensajería 
+:::caution Pendiente
+Pendiente de redactar
+
+[Documentación oficial](https://help.salesforce.com/s/articleView?id=sf.messaging_life_cycle.htm&type=5)
+:::
+
+
+### Glosario de mensajería
+* **Canal:** Es la forma que los clientes intercambian mensajes con nuestro negocio. Como por ejemplo
+un Chat Web, Facebook Messenger, WhatsApp, etc. En la configuración del canal podemos personalizar
+la experiencia de los agentes y agregar automatizaciones.
+* **Mensajería entrante:** Son las sesiones de Mensajería que iniciamos con el cliente. Como cuando un cliente
+nos escribe por medio de WhatsApp.
+
+
+### :exclamation: Guía para actualizar el perfil de Whatsapp para el celular
+:::info Enlace de utilidad
+[Help Salesforce](https://help.salesforce.com/s/articleView?id=sf.messaging_set_up_whatsapp.htm&type=5)
+
+https://developers.facebook.com/docs/whatsapp/message-templates/guidelines
+
+https://help.salesforce.com/s/articleView?id=000393243&type=1
+:::
+
+Vaya a https://business.facebook.com e inicie sesión en su cuenta.
+Navegue a Facebook Business Manager | Business Settings | Business Info. Localice su Id. de Business Manager en la parte superior de la página.
+Envíe un correo electrónico a WhatsAppEnablement@salesforce.com con el asunto “Configurar número de WhatsApp”. Incluya la siguiente información:
+* Id. de organización de Salesforce (sandbox o producción)
+* Id. de Facebook Business Manager
+* El nombre asociado con el Id. de Facebook Business Manager
+* El número de teléfono que desea utilizar para WhatsApp, además de los datos siguientes:
+* El nombre y la dirección de correo electrónico para un punto de contacto para validar la propiedad del número de teléfono
+* El nombre de la empresa que desea mostrar dentro de WhatsApp
+* Si el número de teléfono es una línea fija o móvil
+* Si el número ya está registrado con una cuenta comercial de WhatsApp para otro proveedor de servicio comercial
+
+Opcionalmente, algunos detalles adicionales para su registro de empresa de WhatsApp:
+* La descripción de su empresa (máximo 138 caracteres)
+* Su logotipo, ya sea como una URL o un archivo (.png o .jpeg, de al menos 640x640 píxeles)
+* La URL de su sitio web
+
+### :exclamation: Guía pequeña para enviar correos a Whatsapp
+:::caution Pendiente
+Pendiente de documentar.
+:::
+
+
+## Limitaciones
+### WhatsApp
+* Se puede compartir archivos de hasta 5 MB (.jpg, .jpeg, .png, .gif, .pdf).
+* No se permite mensajes de audio y vídeo.
+* No se permiten emojis.
+* Podemos asignar un mensaje automático de "Fuera de horario" con un Bot de Einstein.
+* La longitud máxima de caracteres en un mensaje es de 1600.
