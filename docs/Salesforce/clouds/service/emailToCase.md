@@ -29,7 +29,7 @@ de **Actividades** la acción de mandar correos desde el caso.
 
 :::caution Atención
 Depende mucho de cómo venga configurada tu organización, pero, puede que se dé el caso de que incluso siguiendo todos los pasos te aparezca un error al momento de "Responder" un
-correo o que no se vea la acción en las actividades. Para solucionarlo les dejo esta [solución del problema](email#la-acción-de-envíar-correo-no-es-visible-en-el-registro).
+correo o que no se vea la acción en las actividades. Para solucionarlo les dejo esta [solución del problema](emailToCase#la-acción-de-envíar-correo-no-es-visible-en-el-registro).
 :::
 
 Desde la búsqueda rápida de configuración, debemos buscar "**Correo electrónico para registro de casos**" seguido de **Modificar** y **Activar Correo electrónico para registros
